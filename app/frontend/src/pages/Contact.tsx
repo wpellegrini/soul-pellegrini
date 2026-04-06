@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Mail, Phone, MapPin, Send, Clock, CheckCircle2 } from "lucide-react";
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, Loader2 } from "lucide-react";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState("");
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,9 +25,39 @@ export default function Contact() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSending(true);
+    setError("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mwvrzlnj", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          role: form.role,
+          subject: form.subject,
+          message: form.message,
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        setError("Erro ao enviar mensagem. Tente novamente.");
+      }
+    } catch {
+      setError("Erro de conexão. Verifique sua internet e tente novamente.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -303,15 +335,31 @@ export default function Contact() {
                         />
                       </div>
 
+                      {error && (
+                        <div className="p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-sm">
+                          {error}
+                        </div>
+                      )}
+
                       <button
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-emerald-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 group"
+                        disabled={sending}
+                        className="w-full flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-emerald-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25 group disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Enviar Mensagem
-                        <Send
-                          size={18}
-                          className="group-hover:translate-x-1 transition-transform"
-                        />
+                        {sending ? (
+                          <>
+                            Enviando...
+                            <Loader2 size={18} className="animate-spin" />
+                          </>
+                        ) : (
+                          <>
+                            Enviar Mensagem
+                            <Send
+                              size={18}
+                              className="group-hover:translate-x-1 transition-transform"
+                            />
+                          </>
+                        )}
                       </button>
                     </form>
                   </>
