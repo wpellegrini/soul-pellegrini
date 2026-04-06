@@ -88,7 +88,7 @@ export default function Index() {
           <div className="absolute inset-0 bg-gradient-to-t from-[#0A0F0D] via-transparent to-[#0A0F0D]/50" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-32 pb-20">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-8 pt-48 pb-20">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/20 mb-8">
               <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />

@@ -8,18 +8,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center font-bold text-white text-lg">
-                SP
-              </div>
-              <div className="flex flex-col">
-                <span className="text-white font-bold text-sm tracking-wider leading-tight">
-                  SOUL PELLEGRINI
-                </span>
-                <span className="text-green-400 text-[10px] font-semibold tracking-[0.3em] uppercase leading-tight">
-                  TECH
-                </span>
-              </div>
+            <div className="flex items-center mb-6">
+              <img
+                src="/assets/logo-soulpellegrini-v2-small.png"
+                alt="Soul Pellegrini Tech"
+                className="h-36 md:h-44 w-auto object-contain"
+              />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
               Consultoria estratégica em tecnologia, transformação digital, IA e

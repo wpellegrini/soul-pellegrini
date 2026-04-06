@@ -35,20 +35,14 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-40 md:h-52">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-green-500 to-emerald-600 flex items-center justify-center font-bold text-white text-lg group-hover:shadow-lg group-hover:shadow-green-500/30 transition-all duration-300">
-              SP
-            </div>
-            <div className="flex flex-col">
-              <span className="text-white font-bold text-sm tracking-wider leading-tight">
-                SOUL PELLEGRINI
-              </span>
-              <span className="text-green-400 text-[10px] font-semibold tracking-[0.3em] uppercase leading-tight">
-                TECH
-              </span>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <img
+              src="/assets/logo-soulpellegrini-v2-small.png"
+              alt="Soul Pellegrini Tech"
+              className="h-36 md:h-44 w-auto object-contain group-hover:brightness-110 transition-all duration-300"
+            />
           </Link>
 
           {/* Desktop Nav */}
