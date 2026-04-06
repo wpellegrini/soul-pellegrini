@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logoImg from "@/assets/logo-soulpellegrini-v2.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -39,7 +40,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center group">
             <img
-              src="/assets/logo-soulpellegrini-v2-small.png"
+              src={logoImg}
               alt="Soul Pellegrini Tech"
               className="h-36 md:h-44 w-auto object-contain group-hover:brightness-110 transition-all duration-300"
             />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
+import logoImg from "@/assets/logo-soulpellegrini-v2.png";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
               <img
-                src="/assets/logo-soulpellegrini-v2-small.png"
+                src={logoImg}
                 alt="Soul Pellegrini Tech"
                 className="h-36 md:h-44 w-auto object-contain"
               />
