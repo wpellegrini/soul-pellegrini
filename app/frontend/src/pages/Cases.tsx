@@ -305,8 +305,8 @@ export default function Cases() {
             Entre em contato e descubra como podemos transformar os desafios
             tecnológicos da sua empresa em resultados extraordinários.
           </p>
-          <Link
-            to="/contato"
+          <a
+            href="mailto:contato@soulpellegrini.com.br"
             className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-green-500 to-emerald-600 text-white font-semibold rounded-xl hover:from-green-400 hover:to-emerald-500 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/25 text-lg group"
           >
             Iniciar Conversa
@@ -314,7 +314,7 @@ export default function Cases() {
               size={20}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </Link>
+          </a>
         </div>
       </section>
 

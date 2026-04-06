@@ -69,12 +69,12 @@ export default function Navbar() {
           </div>
 
           {/* CTA Button */}
-          <Link
-            to="/contato"
+          <a
+            href="mailto:contato@soulpellegrini.com.br"
             className="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold rounded-lg hover:from-green-400 hover:to-emerald-500 transition-all duration-300 hover:shadow-lg hover:shadow-green-500/25"
           >
             Fale Conosco
-          </Link>
+          </a>
 
           {/* Mobile Toggle */}
           <button
@@ -106,12 +106,12 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Link
-            to="/contato"
+          <a
+            href="mailto:contato@soulpellegrini.com.br"
             className="block mt-4 text-center px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-600 text-white text-sm font-semibold rounded-lg"
           >
             Fale Conosco
-          </Link>
+          </a>
         </div>
       </div>
     </nav>
