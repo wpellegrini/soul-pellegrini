@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Mail, Phone, MapPin } from "lucide-react";
-import logoImg from "@/assets/logo-soulpellegrini-v2-small.png";
+/*import logoImg from "@/assets/logo-soulpellegrini-v2-small.png";*/
 const logoImg = "/assets/logo-soulpellegrini-v2-small.png";
 
 export default function Footer() {
